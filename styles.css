@@ -1,0 +1,164 @@
+
+Solution for Build a Personal Portfolio Webpage
+Close
+×
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a class="nav-link" href="#welcome-section">Home</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="welcome-section">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Creative Developer | Problem Solver | Tech Enthusiast</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-tile">
+                <h3>Project One</h3>
+                <p>A brief description of the project.</p>
+                <a href="https://example.com" target="_blank">View Project</a>
+            </div>
+            <div class="project-tile">
+                <h3>Project Two</h3>
+                <p>A brief description of the project.</p>
+                <a href="https://example.com" target="_blank">View Project</a>
+            </div>
+            <div class="project-tile">
+                <h3>Project Three</h3>
+                <p>A brief description of the project.</p>
+                <a href="https://example.com" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>Let's collaborate and create something amazing!</p>
+        <a id="profile-link" href="https://github.com/yourusername" target="_blank">My GitHub</a>
+    </section>
+</body>
+</html>
+CSS
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+#navbar li {
+    display: inline;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #007BFF, #00BFFF);
+    color: white;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-tile {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.project-tile a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.project-tile a:hover {
+    text-decoration: underline;
+}
+
+#contact {
+    padding: 50px;
+    background: #333;
+    color: white;
+}
+
+#profile-link {
+    color: #00BFFF;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+#profile-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-tile {
+        width: 80%;
+    }
+}
