@@ -1,72 +1,20 @@
 
-Solution for Build a Personal Portfolio Webpage
-Close
-×
-HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav id="navbar">
-        <ul>
-            <li><a class="nav-link" href="#welcome-section">Home</a></li>
-            <li><a class="nav-link" href="#projects">Projects</a></li>
-            <li><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="welcome-section">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Creative Developer | Problem Solver | Tech Enthusiast</p>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="projects-container">
-            <div class="project-tile">
-                <h3>Project One</h3>
-                <p>A brief description of the project.</p>
-                <a href="https://example.com" target="_blank">View Project</a>
-            </div>
-            <div class="project-tile">
-                <h3>Project Two</h3>
-                <p>A brief description of the project.</p>
-                <a href="https://example.com" target="_blank">View Project</a>
-            </div>
-            <div class="project-tile">
-                <h3>Project Three</h3>
-                <p>A brief description of the project.</p>
-                <a href="https://example.com" target="_blank">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Get in Touch</h2>
-        <p>Let's collaborate and create something amazing!</p>
-        <a id="profile-link" href="https://github.com/yourusername" target="_blank">My GitHub</a>
-    </section>
-</body>
-</html>
-CSS
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #794028;
 }
+ 
 
+
+/*Nav Bar*/
 #navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #333;
+    background: #0E0504;
     padding: 10px 0;
     z-index: 1000;
 }
@@ -93,17 +41,81 @@ body {
     text-decoration: underline;
 }
 
+
+/*Welcome Section*/
+
 #welcome-section {
     height: 100vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #007BFF, #00BFFF);
-    color: white;
+    background: radial-gradient(circle at 70% 55%, #794028, #311205);color: white;
+    backdrop-filter: blur(1px);
+    padding: .5vh;
 }
 
-.projects-container {
+#welcome-section #words{
+    font-size: 2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    margin: 5%;
+}
+
+#welcome-section #picture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#welcome-section #picture img {
+    border-radius: 75%;
+}
+
+@media (max-width: 768px) {
+    #welcome-section {
+        margin: 0;
+        margin-top: 150px;
+        grid-template-columns: 2fr; /* Change to a single column */
+        grid-template-rows: auto auto; /* Allow content to take needed space */
+        gap:
+    }
+
+    #picture {
+        
+        order: 1; /* Moves the picture to the top */
+    
+    }
+
+    #words {
+        display: inline;
+        text-align: center;
+        justify-content: center;
+        order: 2;
+    }
+}
+
+/*About Me*/
+#about_Me {
+    width: .5vh;
+    height: .5vh;
+    display: inline-block;
+    padding: 1vw 1vh;
+    width: 100vw;
+    height: 90%;
+    text-align: left;
+    justify-content: center;
+}
+
+.aboutme_title { 
+    text-align: center;
+    color: #0E0504;
+
+}
+
+.aboutme_stats {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -111,8 +123,72 @@ body {
     padding: 20px;
 }
 
+
+
+/*Progress Bar*/
+
+
+.progress-container {
+    width: 50vw;
+    background-color: #ddd;
+    border-radius: 20px;
+    height: 12px;
+    position: relative;
+    margin: 20px auto;
+}
+
+/* The progress bar itself */
+.progress-bar1{
+    width: 95%; /* Progress percentage */
+    height: 100%;
+    background: #0E0504;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-bar2{
+    width: 50%; /* Progress percentage */
+    height: 100%;
+    background: #0E0504;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out;
+}
+
+
+.progress-bar3{
+    width: 25%; /* Progress percentage */
+    height: 100%;
+    background: #0E0504;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out;
+}
+
+
+
+
+/*End*/
+
+
+
+
+
+
+
+
+/*Projects*/
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #0E0504;
+}
+
 .project-tile {
-    background: white;
+    color: #EFC3A4;
+    background: #794028;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -123,7 +199,7 @@ body {
     display: block;
     margin-top: 10px;
     text-decoration: none;
-    color: #007BFF;
+    color: #291108;
     font-weight: bold;
 }
 
@@ -133,7 +209,7 @@ body {
 
 #contact {
     padding: 50px;
-    background: #333;
+    background: #0E0504;
     color: white;
 }
 
@@ -162,3 +238,4 @@ body {
         width: 80%;
     }
 }
+
