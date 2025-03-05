@@ -1,2 +1,0 @@
-# Alely-Bitun
-My Portfolio 
